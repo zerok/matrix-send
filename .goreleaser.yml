@@ -9,6 +9,7 @@ before:
 builds:
 - env:
   - CGO_ENABLED=0
+  main: ./cmd/matrix-send/main.go
 archives:
 - replacements:
     darwin: Darwin
@@ -20,6 +21,10 @@ checksum:
   name_template: 'checksums.txt'
 snapshot:
   name_template: "{{ .Tag }}-next"
+release:
+  github:
+    owner: zerok
+    name: matrix-send
 changelog:
   sort: asc
   filters:
